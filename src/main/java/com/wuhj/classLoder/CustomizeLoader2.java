@@ -30,7 +30,7 @@ public class CustomizeLoader2 extends ClassLoader {
 
     private byte[] getCalssData(String name) {
         name = name.replace(".", "/");
-        File file = new File("/Users/a123456/Desktop/TestClass.class");
+        File file = new File("/Users/a123456/IdeaProjects/wuhj-test/jvm_test_2/target/classes/" + name + ".class");
         byte[] bytes = null;
         try {
             @Cleanup
@@ -51,12 +51,17 @@ public class CustomizeLoader2 extends ClassLoader {
     }
 
     public static void main(String[] args) throws Exception {
-        ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
-        System.out.println(systemClassLoader.getParent().getParent());
-        CustomizeLoader2 customizeLoader = new CustomizeLoader2();
-        Class<?> aClass = Class.forName("com.wuhj.classLoder.TestClass", true, customizeLoader);
+        CustomizeLoader2 customizeLoader = new CustomizeLoader2(ClassLoader.getSystemClassLoader().getParent());
+        Class<?> aClass = Class.forName("com.wuhj.classLoder.TestClassLoader", true, customizeLoader);
         Object o = aClass.getDeclaredConstructor().newInstance();
-        System.out.println(o.getClass());
         System.out.println(o.getClass().getClassLoader());
+        System.out.println(o);
+        System.out.println("---------------------");
+        CustomizeLoader2 customizeLoader2 = new CustomizeLoader2(ClassLoader.getSystemClassLoader().getParent());
+        Class<?> aClass2 = customizeLoader2.loadClass("com.wuhj.classLoder.TestClassLoader");
+        Object o2 = aClass2.getDeclaredConstructor().newInstance();
+        System.out.println(o2.getClass().getClassLoader());
+        System.out.println(o2);
+
     }
 }

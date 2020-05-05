@@ -63,7 +63,7 @@ public class CustomizeLoader extends ClassLoader {
          * 这里把自定义的类加载器的parent给修改成系统类的parent，这样就能确保我们自定义的类加载器可以发挥作用
          * 如果需要加载的class文件坐在位置不在classPath下面，就不用单独设置parent
          * */
-        CustomizeLoader customizeLoader = new CustomizeLoader();
+        CustomizeLoader customizeLoader = new CustomizeLoader(ClassLoader.getSystemClassLoader().getParent());
         Class<?> aClass = Class.forName("com.wuhj.classLoder.TestClassLoader", true, customizeLoader);
         Object o = aClass.getDeclaredConstructor().newInstance();
         System.out.println(o.getClass());
