@@ -30,7 +30,7 @@ public class CustomizeLoader2 extends ClassLoader {
 
     private byte[] getCalssData(String name) {
         name = name.replace(".", "/");
-        File file = new File("/Users/a123456/IdeaProjects/wuhj-test/jvm_test_2/target/classes/" + name + ".class");
+        File file = new File("/Users/a123456/Desktop/" + name + ".class");
         byte[] bytes = null;
         try {
             @Cleanup
