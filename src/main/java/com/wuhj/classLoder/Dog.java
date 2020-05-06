@@ -8,6 +8,5 @@ package com.wuhj.classLoder;
 public class Dog {
     public Dog() {
         System.out.println("dog class loader " + Dog.class.getClassLoader());
-        System.out.println(Pig.class);
     }
 }
