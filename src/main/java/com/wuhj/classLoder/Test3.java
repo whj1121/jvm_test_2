@@ -1,4 +1,4 @@
-package com.wuhj;
+package com.wuhj.classLoder;
 
 import java.util.Random;
 
