@@ -41,3 +41,7 @@ class MyChild implements MyParent {
 
 }
 
+interface MyChildInterface extends MyParent {
+    String str = "123";
+}
+
