@@ -7,9 +7,11 @@ package com.wuhj.classLoder;
  */
 public class Test1 {
 
+    private static int a = 1;
 
     public static void main(String[] args) {
         System.out.println(A.str);
+        System.out.println(a);
     }
 
 }

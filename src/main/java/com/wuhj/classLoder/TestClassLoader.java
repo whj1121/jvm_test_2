@@ -21,8 +21,8 @@ public class TestClassLoader {
         C[] c = new C[1];
         System.out.println("array classloader " + c.getClass().getClassLoader());
         /** 获取类加载器是否支持并行 */
-        System.out.println(ClassLoader.getSystemClassLoader().isRegisteredAsParallelCapable());
-        System.out.println(C.class.getClassLoader().isRegisteredAsParallelCapable());
+        //System.out.println(ClassLoader.getSystemClassLoader().isRegisteredAsParallelCapable());
+        //System.out.println(C.class.getClassLoader().isRegisteredAsParallelCapable());
         /** 获取当前线程的上下文的classLoader */
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
         System.out.println(contextClassLoader);

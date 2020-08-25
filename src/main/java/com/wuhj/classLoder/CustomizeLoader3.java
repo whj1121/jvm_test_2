@@ -50,6 +50,7 @@ public class CustomizeLoader3 extends ClassLoader {
         return bytes;
     }
 
+    /**测试自定义类加载器所加载的类可以被卸载 */
     public static void main(String[] args) throws Exception {
         CustomizeLoader3 customizeLoader = new CustomizeLoader3(ClassLoader.getSystemClassLoader().getParent());
         Class<?> aClass = Class.forName("com.wuhj.classLoder.TestClassLoader", true, customizeLoader);

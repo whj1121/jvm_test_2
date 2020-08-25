@@ -11,7 +11,7 @@ public class Test3 {
 
     public static void main(String[] args) throws Exception{
 
-        System.out.println(MyChild.child);
+        System.out.println(MyChild.a);
         System.out.println(Object.class.getClassLoader());
         //System.out.println(MyParent.class.getName());
         //ClassLoader.getSystemClassLoader().loadClass(MyParent.class.getName());
@@ -23,6 +23,7 @@ public class Test3 {
 
 interface MyParent {
     public static final int parent = new Random().nextInt(1);
+    public static final int a = 1;
     static Thread thread = new Thread() {
         {
             System.out.println("初始化MyParent");
